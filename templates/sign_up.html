@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    
+    <header class="header-container">
+        <h1>Homepage</h1>
+        <nav>
+            <ul>
+                <li><a href="/sign_in">Sign In</a></li>
+                <li><a href="/">Exit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="credentials">
+        <h2>Enter your details</h2>
+        <form action="/send_data" method="post">
+        
+            <label for="name" id="name">Name</label>
+            <input class="credentials_name" type="text" id="name" name="name">
+            </br>
+            <label for="email" id="email">Email</label>
+            <input class="credentials_email" type="email" id="email" name="email">
+            </br>
+            <label for="password">Password</label>
+            <input class="credentials_password" type="password" id="password" name="password">
+            </br>
+        
+            <button type="submit" value="">Sign Up</button>
+        
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Posts</title>
+</head>
+<body>
+    <header class="header-container">
+        <h1>{{user.name}}'s posts</h1>
+        <nav>
+            <ul>
+                <li><a href="/user/{{user.id}}">Home</a></li>
+                <li><a href="/user/{{user.id}}/posts">Posts</a></li>
+                <li><a href="/">Exit</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <form action="/send/post" method="post">
+                <h2>What is on your mind...</h2>
+                <input type="text" id="message" name="message" placeholder="Today is a good day, huh?">
+                <input type="hidden" name="id" value="{{user.id}}">
+                <button type="submit">Share</button>
+            </form>
+        </div>
+        
+        <div class="view_posts">
+            {% if post != None %}
+
+            {% for post in posts%}
+
+            <p>{{post.post}} <a class="delete" href="/delete/{{ post.owner_id }}/{{ post.id }}">Delete</a></p>
+
+            {% endfor%}
+            
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
